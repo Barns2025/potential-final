@@ -147,3 +147,27 @@ header.main-header .nav-list a.current {
 .site-footer .contact-col .social-links a[aria-label="TikTok"]:hover i {
   color: var(--primary-color);
 }
+
+
+/* collapse footer columns on small screens */
+@media (max-width: 768px) {
+  .footer-columns {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    padding: 0 15px;
+    gap: 1.5rem;
+  }
+
+  /* force left alignment on all footer columns */
+  .footer-columns .footer-col {
+    min-width: auto;
+    text-align: left !important;
+  }
+
+  /* if you’ve center-aligned anything deeper (like lists), override here */
+  .footer-columns .footer-col ul,
+  .footer-columns .footer-col p,
+  .footer-columns .footer-col h3 {
+    text-align: left;
+  }
+}
