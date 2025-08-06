@@ -1,16 +1,10 @@
-// Menu toggle
-const menuToggleTest = document.querySelector('.menu-toggle');
-const mobileMenuTest = document.querySelector('.mobile-menu');
-menuToggleTest.addEventListener('click', () => {
-  if (mobileMenuTest.style.display === 'block') {
-    mobileMenuTest.style.display = 'none';
-
-   menuToggleTest.textContent = '☰ Menu';    // add the hamburger icon back
-  } else {
-    mobileMenuTest.style.display = 'block';
-
-   menuToggleTest.textContent = '✕ Close';   // include the close icon
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  });
 });
 
 // Subscribe form

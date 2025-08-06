@@ -44,7 +44,11 @@
         <li><a href="careers.html" class="stack-item">Careers</a></li>
         <li><a href="contact.html" class="stack-item">Contact</a></li>
       </ul>
-      <div class="menu-toggle stack-item">☰ Menu</div>
+      <button class="menu-toggle stack-item" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </nav>
   </header>
 
@@ -61,29 +65,77 @@
       <li><a href="contact.html" class="stack-item">Contact</a></li>
     </ul>
   </nav>
+<main class="gallery-content">
+  <h1>Project Gallery</h1>
+  <p>Browse a few examples of our recent barn projects. From new constructions to restorations, these photos showcase the quality and craftsmanship Barns Unlimited delivers.</p>
+  <p class="gallery-note">(*Click on any image to view it larger.*)</p>
 
-  <!-- Gallery Content -->
-  <main class="gallery-content stack-item">
-    <h1 class="stack-item">Project Gallery</h1>
-    <p class="stack-item">Browse a few examples of our recent barn projects. From new constructions to restorations, these photos showcase the quality and craftsmanship Barns Unlimited delivers.</p>
-    <div class="gallery-grid stack-item">
-      <div class="gallery-item stack-item">
-        <img src="images/Restoration.jpeg" alt="Restoration Project" />
-      </div>
-      <div id="myElement" hidden class="stack-item">
-        <div class="gallery-item stack-item">
-          <img src="images/Commercial project.png" alt="Commercial Project" />
-        </div>
-        <div class="gallery-item stack-item">
-          <img src="images/barn3.jpg" alt="Barn project 3" />
-        </div>
-        <div class="gallery-item stack-item">
-          <img src="images/hero.jpg" alt="Barn project 4" />
-        </div>
-      </div>
+  <section class="gallery-section animate-left">
+    <h2>Restoration Projects</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/Restoration.jpeg" loading="eager" alt="Restoration 1"></div>
+      <!-- add more restoration images here -->
     </div>
-    <p class="gallery-note stack-item">(*Click on any image to view it larger.*)</p>
-  </main>
+  </section>
+
+  <section class="gallery-section animate-right">
+    <h2>Steel Frame Buildings</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/steelframe1.jpeg" alt="Steel Frame 1"></div>
+      <div class="gallery-item"><img src="images/steelframe2.jpeg" alt="Steel Frame 2"></div>
+      <div class="gallery-item"><img src="images/steelframe3.jpeg" alt="Steel Frame 3"></div>
+      <div class="gallery-item"><img src="images/steelframe4.jpeg" alt="Steel Frame 4"></div>
+    </div>
+  </section>
+
+  <section class="gallery-section animate-left">
+    <h2>Cement Work</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/Cement1.jpeg" alt="Cement Work 1"></div>
+      <div class="gallery-item"><img src="images/Cement2.jpeg" alt="Cement Work 2"></div>
+      <div class="gallery-item"><img src="images/Cement3.jpeg" alt="Cement Work 3"></div>
+      <div class="gallery-item"><img src="images/Cement4.jpeg" alt="Cement Work 4"></div>
+    </div>
+  </section>
+
+  <section class="gallery-section animate-right">
+    <h2>Ag Buildings</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/ag1.jpeg" alt="Ag Building 1"></div>
+      <div class="gallery-item"><img src="images/ag2.jpeg" alt="Ag Building 2"></div>
+      <div class="gallery-item"><img src="images/ag3.jpeg" alt="Ag Building 3"></div>
+    </div>
+  </section>
+
+  <section class="gallery-section animate-left">
+    <h2>Stone Work</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/stone1.jpeg" alt="Stone Work 1"></div>
+      <div class="gallery-item"><img src="images/stone2.jpeg" alt="Stone Work 2"></div>
+      <div class="gallery-item"><img src="images/stone3.jpeg" alt="Stone Work 3"></div>
+      <div class="gallery-item"><img src="images/stone4.jpeg" alt="Stone Work 4"></div>
+      <div class="gallery-item"><img src="images/stone5.jpeg" alt="Stone Work 5"></div>
+      <div class="gallery-item"><img src="images/stone6.jpeg" alt="Stone Work 6"></div>
+    </div>
+  </section>
+
+  <section class="gallery-section animate-right">
+    <h2>Pole Frame</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/polebarn1.jpeg" alt="Pole Frame 1"></div>
+      <!-- add more pole‐frame images here -->
+      <div class="gallery-item"><img src="images/polebarn11.jpeg" alt="Pole Frame 11"></div>
+    </div>
+  </section>
+
+  <section class="gallery-section animate-left">
+    <h2>Help My Neighbor Foundation</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/charity1.jpeg" alt="Help My Neighbor Foundation 1"></div>
+    </div>
+  </section>
+</main>
+
 
   <!-- Footer Include -->
   <div data-include="footer.html" class="stack-item"></div>

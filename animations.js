@@ -48,3 +48,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.stack-item').forEach(el => observer.observe(el));
 });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      } else {
+        entry.target.classList.remove('in-view');
+      }
+    });
+  }, {
+    // give a 20% “buffer” at the bottom: elements will count as intersecting
+    // when they’re up to 20% out of view below the fold
+    rootMargin: '0px 0px -20% 0px',
+    // fires callback as soon as any bit of the element enters/exits that zone
+    threshold: 0
+  });
+
+  document.querySelectorAll('.animate-left, .animate-right')
+          .forEach(el => observer.observe(el));
+});
+
+
+
+  // 4) Scroll-triggered animations using IntersectionObserver
+  const observerOptions = { threshold: 0.2 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add the fade-in-up animation class when section comes into view
+        entry.target.classList.add("fade-in-up");
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  }, observerOptions);

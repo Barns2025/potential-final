@@ -1,14 +1,10 @@
-// Menu toggle for mobile on Services page
-const menuToggleServices = document.querySelector('.menu-toggle');
-const mobileMenuServices = document.querySelector('.mobile-menu');
-menuToggleServices.addEventListener('click', () => {
-  if (mobileMenuServices.style.display === 'block') {
-    mobileMenuServices.style.display = 'none';
-    menuToggleServices.textContent = '☰ Menu';
-  } else {
-    mobileMenuServices.style.display = 'block';
-    menuToggleServices.textContent = '✕ Close';
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  });
 });
 // Smooth scrolling for anchor links within the page
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

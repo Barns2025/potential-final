@@ -8,12 +8,13 @@
   <!-- Shared header/nav styles -->
   <link rel="stylesheet" href="home.css" />
 
-  <!-- About page–specific overrides -->
+  <!-- About page-specific styles -->
   <link rel="stylesheet" href="about.css" />
   <link rel="stylesheet" href="image-styles.css" />
 
-  <!-- Scroll Animation Styles -->
+  <!-- Scroll animation styles -->
   <link rel="stylesheet" href="animations.css" />
+  
 </head>
 <body>
   <!-- Top Bar -->
@@ -51,11 +52,16 @@
         <li><a href="careers.html" class="stack-item">Careers</a></li>
         <li><a href="contact.html" class="stack-item">Contact</a></li>
       </ul>
-      <div class="menu-toggle stack-item">☰ Menu</div>
+      <!-- Hamburger / Menu Toggle -->
+      <button class="menu-toggle stack-item" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </nav>
   </header>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu (Dropdown) -->
   <nav class="mobile-menu stack-item">
     <ul>
       <li><a href="home.html" class="stack-item">Home</a></li>
@@ -69,7 +75,7 @@
     </ul>
   </nav>
 
-  <!-- About page content -->
+  <!-- Main Content -->
   <main class="about-content stack-item">
     <section class="about-intro stack-item">
       <h1 class="stack-item">About Barns Unlimited</h1>
@@ -97,22 +103,19 @@
     </section>
   </main>
 
-  <!-- Footer Include -->
+  <!-- Footer Include (dynamic) -->
   <div data-include="footer.html" class="stack-item"></div>
   <script>
+    // Load shared footer content
     document.querySelectorAll('[data-include]').forEach(el => {
       fetch(el.getAttribute('data-include'))
         .then(res => res.text())
-        .then(html => el.outerHTML = html)
+        .then(html => { el.outerHTML = html; })
         .catch(err => console.error('Include failed:', err));
     });
   </script>
 
-  <!-- Scroll Animation Script -->
-  <script src="animations.js"></script>
-
-  <!-- Site Scripts -->
+  <!-- Site Script -->
   <script src="home.js"></script>
-  <script src="about.js"></script>
 </body>
 </html>

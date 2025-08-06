@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  
+
   // 4) Scroll-triggered animations using IntersectionObserver
   const observerOptions = { threshold: 0.1 };
   const observer = new IntersectionObserver((entries) => {

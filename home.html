@@ -1,23 +1,21 @@
+<!-- home.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barns Unlimited – Home</title>
-  <!-- Google Fonts -->
+
+  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" /> 
   <link rel="stylesheet" href="image-styles.css" />
-  <!-- Animations styles -->
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="footer.css" />
-  <!-- Scroll stack animation CSS -->
-
 </head>
 <body>
-  <!-- Top bar with contacts and social links -->
+  <!-- Top bar -->
   <div class="top-bar stack-item">
     <div class="top-bar-content stack-item">
       <div class="contact-info stack-item">
@@ -25,7 +23,7 @@
         <span>Call us: <a href="tel:+14196572510">+419-657-2510</a></span>
       </div>
       <a href="#" class="appointment-btn stack-item">Book appointment</a>
-      <div class="social-links">
+      <div class="social-links stack-item">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
@@ -34,7 +32,7 @@
     </div>
   </div>
 
-  <!-- Header with logo and navigation -->
+  <!-- Header & Nav -->
   <header class="main-header stack-item">
     <div class="logo stack-item">
       <a href="home.html">
@@ -42,7 +40,7 @@
       </a>
     </div>
     <nav class="main-nav stack-item">
-      <ul class="nav-list">
+      <ul class="nav-list stack-item">
         <li><a href="home.html" class="current stack-item">Home</a></li>
         <li><a href="about.html" class="stack-item">About</a></li>
         <li><a href="services.html" class="stack-item">Services</a></li>
@@ -52,11 +50,17 @@
         <li><a href="careers.html" class="stack-item">Careers</a></li>
         <li><a href="contact.html" class="stack-item">Contact</a></li>
       </ul>
-      <div class="menu-toggle stack-item">☰ Menu</div>
+
+      <!-- Hamburger / Menu Toggle -->
+      <button class="menu-toggle stack-item" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </nav>
   </header>
 
-  <!-- Mobile dropdown, toggled by home.js -->
+  <!-- Mobile dropdown -->
   <nav class="mobile-menu stack-item">
     <ul>
       <li><a href="home.html" class="stack-item current">Home</a></li>
@@ -70,7 +74,7 @@
     </ul>
   </nav>
 
-  <!-- Hero section with background image and tagline -->
+  <!-- Hero -->
   <section class="hero stack-item" style="background-image: url('images/hero.jpg');">
     <div class="hero-overlay stack-item">
       <h1 class="stack-item">We specialize in Design, Construction, and Restoration of high-quality barns</h1>
@@ -79,15 +83,18 @@
     </div>
   </section>
 
-  <!-- Introduction / Mission section -->
+  <!-- Intro / Services Preview -->
   <section class="intro-section stack-item">
     <div class="intro-text stack-item">
       <h2 class="stack-item">Welcome to Barns Unlimited</h2>
-      <p class="stack-item"><strong>Barns Unlimited</strong> is a family-owned and operated barn construction company in Lima, Ohio. We are committed to sustainable practices and historic preservation, with years of proven experience in barn restoration and repair. We design, construct, and restore quality barns tailored to your needs, bringing your dream barn to life with care and craftsmanship.</p>
+      <p class="stack-item">
+        <strong>Barns Unlimited</strong> is a family-owned barn construction company in Lima, Ohio. We blend  
+        sustainable practices with historic preservation, designing, constructing, and restoring barns  
+        tailored to you.
+      </p>
     </div>
   </section>
 
-  <!-- Services summary / What We Offer preview -->
   <section class="services-summary stack-item">
     <h2 class="stack-item">What We Offer</h2>
     <div class="services-grid">
@@ -118,32 +125,18 @@
     </div>
   </section>
 
-  <!-- inject footer.html here -->
+  <!-- Footer include -->
   <div data-include="footer.html" class="stack-item"></div>
-
-  <!-- footer-include script -->
   <script>
     document.querySelectorAll('[data-include]').forEach(el => {
       fetch(el.getAttribute('data-include'))
         .then(res => res.text())
-        .then(html => { el.outerHTML = html; })
+        .then(html => el.outerHTML = html)
         .catch(err => console.error('Include failed:', err));
     });
   </script>
 
-  <!-- Scroll Animation Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('in-view');
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.stack-item').forEach(el => observer.observe(el));
-    });
-  </script>
-
-  <!-- Site JavaScript -->
-  <script src="home.js"></script>
+  <!-- Site Scripts -->
+  <script src="home.js"></script> 
 </body>
 </html>

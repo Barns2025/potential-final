@@ -1,17 +1,9 @@
-// gallery.js
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile menu toggle
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  
-  menuToggle.addEventListener('click', () => {
-    if (mobileMenu.style.display === 'block') {
-      mobileMenu.style.display = 'none';
-      menuToggle.textContent = '☰ Menu';
-    } else {
-      mobileMenu.style.display = 'block';
-      menuToggle.textContent = '✕ Close';
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
   });
 });
 // Image click handler to enlarge image (simple lightbox functionality)
@@ -45,3 +37,5 @@ document.querySelectorAll('.subscribe-form, .subscribe-form-footer').forEach(for
     this.reset();
   });
 });
+
+

@@ -1,14 +1,10 @@
-// Mobile menu toggle
-const menuToggleMetal = document.querySelector('.menu-toggle');
-const mobileMenuMetal = document.querySelector('.mobile-menu');
-menuToggleMetal.addEventListener('click', () => {
-  if (mobileMenuMetal.style.display === 'block') {
-    mobileMenuMetal.style.display = 'none';
-    menuToggleMetal.textContent = '☰ Menu';
-  } else {
-    mobileMenuMetal.style.display = 'block';
-    menuToggleMetal.textContent = '✕ Close';
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  });
 });
 // Form submission for subscribe (same as elsewhere)
 document.querySelectorAll('.subscribe-form, .subscribe-form-footer').forEach(form => {
@@ -18,3 +14,7 @@ document.querySelectorAll('.subscribe-form, .subscribe-form-footer').forEach(for
     this.reset();
   });
 });
+
+
+
+

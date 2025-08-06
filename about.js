@@ -1,22 +1,17 @@
-// home.js
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
-
   menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("open");
     mobileMenu.classList.toggle("open");
-    menuToggle.textContent = mobileMenu.classList.contains("open")
-      ? "✕ Close"
-      : "☰ Menu";
   });
 });
-
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const targetId = this.getAttribute('href');
     if (targetId.startsWith('#')) {
-      e.preventDefault();
+      e.preventDefault();Z
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         window.scrollTo({

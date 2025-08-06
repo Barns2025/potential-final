@@ -47,7 +47,12 @@
         <li><a href="careers.html" class="stack-item">Careers</a></li>
         <li><a href="contact.html" class="current stack-item">Contact</a></li>
       </ul>
-      <div class="menu-toggle stack-item">☰ Menu</div>
+       <!-- Hamburger / Menu Toggle -->
+      <button class="menu-toggle stack-item" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </nav>
   </header>
 
@@ -102,6 +107,7 @@
   <!-- Footer Include -->
   <div data-include="footer.html" class="stack-item"></div>
   <script>
+    // Load shared footer content
     document.querySelectorAll('[data-include]').forEach(el => {
       fetch(el.getAttribute('data-include'))
         .then(res => res.text())

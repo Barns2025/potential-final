@@ -417,3 +417,56 @@ header.main-header .main-nav .nav-list a.current {
 .contact-link:hover {
   color: #E74C3C;
 }
+
+
+
+/* 5-column responsive grid for your color swatches */
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;           /* space between swatches */
+  width: 100%;         /* fill its parent/container */
+  margin: 0 auto;      /* center if max-width is set higher up */
+  box-sizing: border-box;
+}
+
+/* individual swatch styling */
+.color-swatch {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* color preview box */
+.color-swatch span {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  border: 2px solid #000;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* —— Animation prep —— */
+.color-swatch {
+  opacity: 0;
+  transition: transform 2s ease-out, opacity 2s ease-out;
+}
+
+/* —— Initial offsets —— */
+.pre-slide-left  { transform: translateX(-100px); }
+.pre-slide-right { transform: translateX(100px); }
+
+/* —— On‐screen state —— */
+.slide-in {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+
